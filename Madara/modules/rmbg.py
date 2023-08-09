@@ -2,11 +2,12 @@ import os
 import requests
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from Madara import pgram as app
 
 REMOVEBG_API = os.environ.get("REMOVEBG_API", "tbWHBFNxFtKoZ3kaYbFaxuJG")
 UNSCREEN_API = os.environ.get("UNSCREEN_API", "xaQwmKwkjjR48jANXiFhmGo9")
 
-@Bot.on_message(filters.private & (filters.photo | filters.video | filters.document))
+@app.on_message(filters.private & (filters.photo | filters.video | filters.document))
 async def remove_background(bot, update):
     if not (REMOVEBG_API or UNSCREEN_API):
         await update.reply_text(
