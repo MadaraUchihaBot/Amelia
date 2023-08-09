@@ -13,8 +13,7 @@ async def remove_background(bot, update):
         await update.reply_text(
             text="Error :- API not found",
             quote=True,
-            disable_web_page_preview=True,
-            reply_markup=ERROR_BUTTONS
+            disable_web_page_preview=True           
         )         
     message = await update.reply_text(
         text="Processing",
@@ -50,8 +49,7 @@ async def remove_background(bot, update):
         else:
             await message.edit_text(
                 text="Media not supported",
-                disable_web_page_preview=True,
-                reply_markup=ERROR_BUTTONS
+                disable_web_page_preview=True            
             )
         try:
             os.remove(file)
@@ -68,8 +66,7 @@ async def remove_background(bot, update):
         await update.reply_chat_action("upload_document")
     except Exception as error:
         await message.edit_text(
-           text=error,
-           reply_markup=ERROR_BUTTONS
+           text=error,        
         )
         return
     try:
@@ -84,8 +81,7 @@ async def remove_background(bot, update):
     except Exception as error:
         await message.edit_text(
             text=f"Error:- `{error}`",
-            disable_web_page_preview=True,
-            reply_markup=ERROR_BUTTONS
+            disable_web_page_preview=True          
         )
 
 
