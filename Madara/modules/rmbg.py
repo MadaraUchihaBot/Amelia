@@ -11,15 +11,18 @@ UNSCREEN_API = os.environ.get("UNSCREEN_API", "xaQwmKwkjjR48jANXiFhmGo9")
 async def remove_background(bot, update):
     if not (REMOVEBG_API or UNSCREEN_API):
         await update.reply_text(
-            text="Error :- API not found",
+            text="Error: API not found",
             quote=True,
-            disable_web_page_preview=True           
-        )         
+            disable_web_page_preview=True
+        )
+        return
+
     message = await update.reply_text(
-        text="Processing",
+        text="Processing...",
         quote=True,
         disable_web_page_preview=True
     )
+
     try:
         new_file_name = f"./{str(update.from_user.id)}"
         if (
@@ -49,26 +52,31 @@ async def remove_background(bot, update):
         else:
             await message.edit_text(
                 text="Media not supported",
-                disable_web_page_preview=True            
+                disable_web_page_preview=True
             )
+            return
+
         try:
             os.remove(file)
         except:
             pass
     except Exception as error:
         await message.edit_text(
-            text=error,
+            text=str(error),
             disable_web_page_preview=True
         )
+        return
+
     try:
         with open(new_file_name, "wb") as file:
-            file.write(new_document.content)
+            file.write(new_document)
         await update.reply_chat_action("upload_document")
     except Exception as error:
         await message.edit_text(
-           text=error,        
+            text=str(error),
         )
         return
+
     try:
         await update.reply_document(
             document=new_file_name,
@@ -80,24 +88,27 @@ async def remove_background(bot, update):
             pass
     except Exception as error:
         await message.edit_text(
-            text=f"Error:- `{error}`",
-            disable_web_page_preview=True          
+            text=f"Error: {error}",
+            disable_web_page_preview=True
         )
 
 
 def removebg_image(file):
-    return requests.post(
+    response = requests.post(
         "https://api.remove.bg/v1.0/removebg",
         files={"image_file": open(file, "rb")},
         data={"size": "auto"},
         headers={"X-Api-Key": REMOVEBG_API}
     )
+    response.raise_for_status()  # Check for API errors
+    return response.content
 
 
 def removebg_video(file):
-    return requests.post(
+    response = requests.post(
         "https://api.unscreen.com/v1.0/videos",
         files={"video_file": open(file, "rb")},
         headers={"X-Api-Key": UNSCREEN_API}
     )
-
+    response.raise_for_status()  # Check for API errors
+    return response.content
