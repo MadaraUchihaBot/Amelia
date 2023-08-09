@@ -112,3 +112,14 @@ def removebg_video(file):
     )
     response.raise_for_status()  # Check for API errors
     return response.content
+
+__help__= """
+*Available commands:*
+
+there is no command just send in bot pm image or video
+"""
+
+__mod_name__ = "RMBG"   
+__command_list__ = [
+    "rmbg",
+      ]
