@@ -133,11 +133,13 @@ AI-Powered Chatbot.
  ➛ /bing <keyword>
 For example: /bing cats
  ➛ /bard - Chat with me. Usage: /bard who are you
+ ➛ /upscale - upscale the image
 """
 
-__mod_name__ = "ᗩI ᑕᕼᗩT"   
+__mod_name__ = "𝙰ɪ"   
 __command_list__ = [
     "chat",
     "bing",
     "bard",
+    "upscale",
       ]
