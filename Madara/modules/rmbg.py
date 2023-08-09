@@ -1,124 +1,65 @@
 import os
-import requests
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+import aiohttp
+import aiofiles
+from aiohttp import ContentTypeError
 from Madara import pgram as app
+from pyrogram import filters
 
-REMOVEBG_API = os.environ.get("REMOVEBG_API", "tbWHBFNxFtKoZ3kaYbFaxuJG")
-UNSCREEN_API = os.environ.get("UNSCREEN_API", "xaQwmKwkjjR48jANXiFhmGo9")
+def check_filename(filroid):
+    if os.path.exists(filroid):
+        no = 1
+        while True:
+            ult = "{0}_{2}{1}".format(*os.path.splitext(filroid) + (no,))
+            if os.path.exists(ult):
+                no += 1
+            else:
+                return ult
+    return filroid
 
-@app.on_message(filters.private & (filters.photo | filters.video | filters.document))
-async def remove_background(bot, update):
-    if not (REMOVEBG_API or UNSCREEN_API):
-        await update.reply_text(
-            text="Error: API not found",
-            quote=True,
-            disable_web_page_preview=True
-        )
-        return
+async def RemoveBG(input_file_name):
+    headers = {"X-API-Key": "1bhk8WvFYdffPnC7HSCSZMTx"}
+    files = {"image_file": open(input_file_name, "rb").read()}
+    async with aiohttp.ClientSession() as ses:
+        async with ses.post(
+            "https://api.remove.bg/v1.0/removebg", headers=headers, data=files
+        ) as y:
+            contentType = y.headers.get("content-type")
+            if "image" not in contentType:
+                return False, (await y.json())
 
-    message = await update.reply_text(
-        text="Processing...",
-        quote=True,
-        disable_web_page_preview=True
-    )
-
-    try:
-        new_file_name = f"./{str(update.from_user.id)}"
-        if (
-            update.photo or (
-                update.document and "image" in update.document.mime_type
-            )
-        ):
-            new_file_name += ".png"
-            file = await update.download()
-            await message.edit_text(
-                text="Photo downloaded successfully. Now removing background.",
-                disable_web_page_preview=True
-            )
-            new_document = removebg_image(file)
-        elif (
-            update.video or (
-                update.document and "video" in update.document.mime_type
-            )
-        ):
-            new_file_name += ".webm"
-            file = await update.download()
-            await message.edit_text(
-                text="Video downloaded successfully. Now removing background.",
-                disable_web_page_preview=True
-            )
-            new_document = removebg_video(file)
-        else:
-            await message.edit_text(
-                text="Media not supported",
-                disable_web_page_preview=True
-            )
-            return
-
-        try:
-            os.remove(file)
-        except:
-            pass
-    except Exception as error:
-        await message.edit_text(
-            text=str(error),
-            disable_web_page_preview=True
-        )
-        return
-
-    try:
-        with open(new_file_name, "wb") as file:
-            file.write(new_document)
-        await update.reply_chat_action("upload_document")
-    except Exception as error:
-        await message.edit_text(
-            text=str(error),
-        )
-        return
-
-    try:
-        await update.reply_document(
-            document=new_file_name,
-            quote=True
-        )
-        try:
-            os.remove(new_file_name)
-        except:
-            pass
-    except Exception as error:
-        await message.edit_text(
-            text=f"Error: {error}",
-            disable_web_page_preview=True
-        )
+            name = check_filename("alpha.png")
+            file = await aiofiles.open(name, "wb")
+            await file.write(await y.read())
+            await file.close()
+            return True, name
 
 
-def removebg_image(file):
-    response = requests.post(
-        "https://api.remove.bg/v1.0/removebg",
-        files={"image_file": open(file, "rb")},
-        data={"size": "auto"},
-        headers={"X-Api-Key": REMOVEBG_API}
-    )
-    response.raise_for_status()  # Check for API errors
-    return response.content
+@app.on_message(filters.command("rmbg"))
+async def rmbg(bot, message):
+  rmbg = await message.reply("**Processing...**") 
+  replied = message.reply_to_message
+  if not replied:
+      return await rmbg.edit("**Reply to a photo to Remove it's Backgroud**")
 
+  if replied.photo:
+      photo = await bot.download_media(replied)
+      x, y = await RemoveBG(photo)
+      os.remove(photo)
+      if not x:
+          bruh = y["errors"][0]
+          details = bruh.get("detail", "")
+          return await rmbg.edit(f"**ERROR ~** `{bruh['title']}`,\n`{details}`")
+      await message.reply_photo(photo=y,caption="**Here is your Image without Background**")
+      await message.reply_document(document=y)
+      await rmbg.delete()
+      return os.remove(y)
+  await rmbg.edit("**Reply only to a photo to Remove it's Background**")
 
-def removebg_video(file):
-    response = requests.post(
-        "https://api.unscreen.com/v1.0/videos",
-        files={"video_file": open(file, "rb")},
-        headers={"X-Api-Key": UNSCREEN_API}
-    )
-    response.raise_for_status()  # Check for API errors
-    return response.content
-
-app,run()
 
 __help__= """
 *Available commands:*
 
-there is no command just send in bot pm image or video
+/rmbg - reply image
 """
 
 __mod_name__ = "RMBG"   
