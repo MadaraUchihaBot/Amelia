@@ -77,7 +77,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 HELP_MSG = "ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴍᴇɴᴜ ~"
-START_MSG = "* I ᴀᴍ ɢʜᴏsᴛ ᴏғ ᴛʜᴇ ᴜᴄʜɪʜᴀ, ᴍᴀᴅᴀʀᴀ ᴜsᴄʜɪʜᴀ;)"
+START_MSG = "HOLA"
 
 
 PM_START_TEX = """
@@ -85,7 +85,8 @@ PM_START_TEX = """
 """
 
 PM_START_TEXT = """
-**ɪ ᴀᴍ ᴍᴀᴅᴀʀᴀ**, 💀[ㅤ](https://graph.org/file/2904688233933fd7e64fc.mp4)
+**ɪ ᴀᴍ ᴍᴀᴅᴀʀᴀ**, 💀[ㅤ](https://telegra.ph/file/b3028bca7e9653509f1fd.jpg) 
+ 
 ×⋆✦⋆──────────────⋆✦⋆×
 ×**ɪ ᴀᴍ ᴀ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ɢʀᴏᴜᴘ 
 ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡʜɪᴄʜ ᴄᴀɴ ʜᴇʟᴘ
@@ -127,7 +128,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-✨ 𝙈𝙖𝙙𝙖𝙧𝙖✨[ㅤ](https://graph.org/file/9b8b09ce1d5d48f8004f3.jpg)
+✨ 𝙈𝙖𝙙𝙖𝙧𝙖✨[ㅤ](https://telegra.ph/file/b3028bca7e9653509f1fd.jpg)
 ━━━━━━━━━━━━━━━━━      
 ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ
 ɢᴇᴛ ᴜꜱᴀɢᴇ ᴏꜰ ꜱᴘᴇᴄɪꜰɪᴄꜱ ᴄᴏᴍᴍᴀɴᴅ
@@ -716,7 +717,7 @@ def main():
         try:
             dispatcher.bot.sendAnimation(
                 f"@{SUPPORT_CHAT}",
-                animation="https://graph.org/file/2904688233933fd7e64fc.mp4",
+                animation="https://telegra.ph/file/b3028bca7e9653509f1fd.jpg",
                 caption=f"""
 ✨ {dispatcher.bot.first_name} ɪs ᴀʟɪᴠᴇ .....
     ➖➖➖➖➖➖➖➖➖➖➖➖
