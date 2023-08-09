@@ -113,6 +113,8 @@ def removebg_video(file):
     response.raise_for_status()  # Check for API errors
     return response.content
 
+app,run()
+
 __help__= """
 *Available commands:*
 
