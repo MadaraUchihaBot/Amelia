@@ -6,7 +6,7 @@ from Madara import pgram as app
 
 # Function to create a bold font
 def get_bold_font(size):
-    return ImageFont.truetype("Big Space.otf", size)
+    return ImageFont.truetype("Madara/resources/Vampire_Wars.ttf", size)
 
 @app.on_message(filters.new_chat_members & filters.group)
 async def welcome(_, message):
@@ -48,7 +48,7 @@ async def welcome(_, message):
             # Draw the username on the welcome image
             draw = ImageDraw.Draw(welcome_with_profile_pic)
             font_size = 35
-            font = ImageFont.truetype("Big Space.otf", font_size)
+            font = ImageFont.truetype("Madara/resources/Vampire_Wars.ttf", font_size)
             username_text = f"Name: {user.first_name}!"
             text_width, text_height = draw.textsize(username_text, font=font)
             text_position = ((image_width - text_width) // 2, profile_pic_position[1] + profile_pic_size[1] + 20)
@@ -125,7 +125,7 @@ async def goodbye(_, message):
         # Draw the username on the goodbye image
         draw = ImageDraw.Draw(goodbye_with_user)
         font_size = 35
-        font = ImageFont.truetype("Big Space.otf", font_size)
+        font = ImageFont.truetype("Madara/resources/Vampire_Wars.ttf", font_size)
         username_text = f"Goodbye, {user.first_name}!"
         text_width, text_height = draw.textsize(username_text, font=font)
         text_position = ((image_width - text_width) // 2, profile_pic_position[1] + profile_pic_size[1] + 20)
