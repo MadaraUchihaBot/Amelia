@@ -81,7 +81,7 @@ START_MSG = "* 𝗜 𝗮𝗺 𝙎𝙪𝙣𝙜 𝙅𝙞𝙣 𝙒𝙤𝙤"
 
 
 PM_START_TEXT = """
-×**𝗜 𝗮𝗺 𝙎𝙪𝙣𝙜 𝙅𝙞𝙣 𝙒𝙤𝙤, 𝗮𝗻 𝗮𝗱𝘃𝗮𝗻𝗰𝗲 𝘁𝗲𝗹𝗲𝗴𝗿𝗮𝗺 𝗯𝗼𝘁 𝗲𝗾𝘂𝗶𝗽𝗽𝗲𝗱 𝘄𝗶𝘁𝗵 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗻𝗲𝗰𝗲𝘀𝘀𝗮𝗿𝘆 𝘁𝗼𝗼𝗹𝘀 𝘁𝗼 𝗺𝗮𝗻𝗮𝗴𝗲 𝘆𝗼𝘂𝗿 𝗴𝗿𝗼𝘂𝗽.💀[ㅤ](https://graph.org/file/2904688233933fd7e64fc.mp4)
+×**𝗜 𝗮𝗺 𝙎𝙪𝙣𝙜 𝙅𝙞𝙣 𝙒𝙤𝙤, 𝗮𝗻 𝗮𝗱𝘃𝗮𝗻𝗰𝗲 𝘁𝗲𝗹𝗲𝗴𝗿𝗮𝗺 𝗯𝗼𝘁 𝗲𝗾𝘂𝗶𝗽𝗽𝗲𝗱 𝘄𝗶𝘁𝗵 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗻𝗲𝗰𝗲𝘀𝘀𝗮𝗿𝘆 𝘁𝗼𝗼𝗹𝘀 𝘁𝗼 𝗺𝗮𝗻𝗮𝗴𝗲 𝘆𝗼𝘂𝗿 𝗴𝗿𝗼𝘂𝗽.💀[ㅤ](https://graph.org/file/43afee201e4dcf11929be.jpg)
 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
 ➲ ᴍᴜsɪᴄ sʏsᴛᴇᴍ
 ➲ ᴀᴅᴠᴀɴᴄᴇ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ᴄᴀᴘᴀʙɪʟɪᴛʏ
@@ -123,7 +123,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-✨ 𝙈𝙖𝙙𝙖𝙧𝙖✨[ㅤ](https://graph.org/file/9b8b09ce1d5d48f8004f3.jpg)
+✨ 𝙎𝙪𝙣𝙜 𝙅𝙞𝙣 𝙒𝙤𝙤✨[ㅤ](https://graph.org/file/9b8b09ce1d5d48f8004f3.jpg)
 ━━━━━━━━━━━━━━━━━      
 ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ
 ɢᴇᴛ ᴜꜱᴀɢᴇ ᴏꜰ ꜱᴘᴇᴄɪꜰɪᴄꜱ ᴄᴏᴍᴍᴀɴᴅ
@@ -267,7 +267,7 @@ def start(update: Update, context: CallbackContext):
                         ),
                         InlineKeyboardButton(
                             text="📗 𝙐𝙋𝘿𝘼𝙏𝙀𝙎",
-                            url=f"https://t.me/JujutsuHighNetwork",
+                            url=f"https://t.me/JujutsuHighBotUpdates",
                         ),
                     ],
                     [
@@ -712,7 +712,7 @@ def main():
         try:
             dispatcher.bot.sendAnimation(
                 f"@{SUPPORT_CHAT}",
-                animation="https://graph.org/file/2904688233933fd7e64fc.mp4",
+                animation="https://graph.org/file/43afee201e4dcf11929be.jpg",
                 caption=f"""
 ✨ {dispatcher.bot.first_name} ɪs ᴀʟɪᴠᴇ .....
     ➖➖➖➖➖➖➖➖➖➖➖➖
