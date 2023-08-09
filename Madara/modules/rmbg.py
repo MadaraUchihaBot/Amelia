@@ -15,9 +15,7 @@ async def remove_background(bot, update):
             quote=True,
             disable_web_page_preview=True,
             reply_markup=ERROR_BUTTONS
-        )
-        return
-    await update.reply_chat_action("typing")
+        )         
     message = await update.reply_text(
         text="Processing",
         quote=True,
