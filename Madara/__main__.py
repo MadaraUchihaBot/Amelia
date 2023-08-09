@@ -85,7 +85,7 @@ PM_START_TEX = """
 """
 
 PM_START_TEXT = """
-**ɪ ᴀᴍ ᴍᴀᴅᴀʀᴀ**, 💀[ㅤ](https://telegra.ph/file/b3028bca7e9653509f1fd.jpg) 
+**ɪ ᴀᴍ 𝙎𝙪𝙣𝙜 𝙅𝙞𝙣 𝙒𝙤𝙤**, 💀[ㅤ](https://telegra.ph/file/b3028bca7e9653509f1fd.jpg) 
  
 ×⋆✦⋆──────────────⋆✦⋆×
 ×**ɪ ᴀᴍ ᴀ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ɢʀᴏᴜᴘ 
@@ -128,7 +128,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-✨ 𝙈𝙖𝙙𝙖𝙧𝙖✨[ㅤ](https://telegra.ph/file/b3028bca7e9653509f1fd.jpg)
+✨𝙎𝙪𝙣𝙜 𝙅𝙞𝙣 𝙒𝙤𝙤✨[ㅤ](https://telegra.ph/file/b3028bca7e9653509f1fd.jpg)
 ━━━━━━━━━━━━━━━━━      
 ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ
 ɢᴇᴛ ᴜꜱᴀɢᴇ ᴏꜰ ꜱᴘᴇᴄɪꜰɪᴄꜱ ᴄᴏᴍᴍᴀɴᴅ
@@ -285,8 +285,6 @@ def start(update: Update, context: CallbackContext):
             ),
         )
 
-
-# BSDK KY DEK RA H ©
 
 
 def error_handler(update, context):
