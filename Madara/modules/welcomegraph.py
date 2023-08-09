@@ -2,7 +2,7 @@ import os
 from pyrogram import Client, filters, idle
 from PIL import Image, ImageDraw, ImageOps, ImageFont
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
+from Madara import pgram as app
 
 # Function to create a bold font
 def get_bold_font(size):
