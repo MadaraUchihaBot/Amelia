@@ -20,7 +20,7 @@ async def welcome(_, message):
             image_height = 720
             
             # Load the custom welcome template image
-            welcome_image = Image.open("Untitled5_20230808001129.png")
+            welcome_image = Image.open("Madara/resources/Untitled5_20230808001129.png")
             welcome_image = welcome_image.resize((image_width, image_height))
             
             # Load and resize the new user's profile picture
@@ -95,7 +95,7 @@ async def goodbye(_, message):
         image_height = 720
         
         # Load the custom goodbye template image
-        goodbye_image = Image.open("Untitled5_20230808001129.png")
+        goodbye_image = Image.open("Madara/resources/Untitled5_20230808001129.png")
         goodbye_image = goodbye_image.resize((image_width, image_height))
         
         # Create a new blank image for the combined goodbye image
