@@ -17,29 +17,29 @@ class Config(object):
     # ᴀᴅᴅ ʏᴏᴜʀ ᴠᴇʀs  (ᴍᴀɪɴ ᴠᴇʀs)
     API_ID = int(getenv("API_ID", "16743442"))
     API_HASH = getenv("API_HASH", "12bbd720f4097ba7713c5e40a11dfd2a")
-    EVENT_LOGS = int(getenv("EVENT_LOGS", "-1001922732593"))
+    EVENT_LOGS = int(getenv("EVENT_LOGS", "-1001477323770"))
     DATABASE_URL = getenv(
         "DATABASE_URL",
-        "postgres://koazucwc:swrSbAQlGp-Ndxm_UNoPYayYW9zCi4Gp@snuffleupagus.db.elephantsql.com/koazucwc",
+        "postgres://jdlimncq:EJfDsICvSokbv5yB2ug5zpcXhO7jNrbd@arjuna.db.elephantsql.com/jdlimncq",
     )  # elephantsql.com
     REDIS_URL = "redis://default:neko69@redis-18084.c289.us-west-1-2.ec2.cloud.redislabs.com:18084/Neko-Free-db"  # redis.os
     MONGO_DB_URL = getenv(
         "MONGO_DB_URL",
-        "mongodb+srv://vortex:yNNrzMsR0BAiI4iY@cluster0.8sizo.mongodb.net/?retryWrites=true&w=majority",
+        "mongodb+srv://sonu55:sonu55@cluster0.vqztrvk.mongodb.net/?retryWrites=true&w=majority",
     )
-    TOKEN = getenv("TOKEN", "6308859474:AAHwnProlnbgAVxwFaCFebrCotLRuG_zJa8")
-    OWNER_USERNAME = getenv("OWNER_USERNAME", "SexyNano")
-    OWNER_ID = int(getenv("OWNER_ID", "6198858059"))
-    SUPPORT_CHAT = getenv("SUPPORT_CHAT", "NanoSTestingArea")
+    TOKEN = getenv("TOKEN", "1844045546:AAGKfDtV7bg04Ije-VinNvH47LR369BR_Xc")
+    OWNER_USERNAME = getenv("OWNER_USERNAME", "AbhishekSingh")
+    OWNER_ID = int(getenv("OWNER_ID", " 1329105215"))
+    SUPPORT_CHAT = getenv("SUPPORT_CHAT", "warbotzsupport")
 
     # ɴᴏᴛ ɪᴍᴘᴏʀᴛᴀɴᴛ ᴢᴏɴᴇ, ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴇᴅɪᴛ
     MONGO_DB = "Madara"  # ⚠️ ᴅᴏɴ'ᴛ ᴇᴅɪᴛ
     ARQ_API_URL = "arq.hamker.dev"  # ⚠️ ᴅᴏɴ'ᴛ ᴇᴅɪᴛ
     ARQ_API_KEY = "YZXQNZ-TPCRLZ-HKWWKY-SPPYAL-ARQ"
     DONATION_LINK = "t.me/SexyNano"
-    HELP_IMG = "https://graph.org/file/9b8b09ce1d5d48f8004f3.jpg"
-    START_VIDEO = "https://graph.org/file/2904688233933fd7e64fc.mp4"
-    UPDATES_CHANNEL = "JujutsuHighNetwork"
+    HELP_IMG = "https://telegra.ph/file/329647a798cccb101aecf.jpg"
+    START_VIDEO = "https://telegra.ph/file/329647a798cccb101aecf.jpg"
+    UPDATES_CHANNEL = "Thewarbotz"
     INFOPIC = False
     GENIUS_API_TOKEN = (
         "gIgMyTXuwJoY9VCPNwKdb_RUOA_9mCMmRlbrrdODmNvcpslww_2RIbbWOB8YdBW9"
@@ -62,7 +62,7 @@ class Config(object):
     ALLOW_EXCL = []
     ALLOW_CHATS = True
     CERT_PATH = []
-    SPAMWATCH_SUPPORT_CHAT = "Anime_Krew"
+    SPAMWATCH_SUPPORT_CHAT = "Thewarbotz"
     BOT_API_URL = "https://api.telegram.org/bot"  # ⚠️ ᴅᴏɴ'ᴛ ᴇᴅɪᴛ
     DRAGONS = get_user_list("elevated_users.json", "sudos")  # ⚠️ ᴅᴏɴ'ᴛ ᴇᴅɪᴛ
     DEV_USERS = get_user_list("elevated_users.json", "devs")  # ⚠️ ᴅᴏɴ'ᴛ ᴇᴅɪᴛ
