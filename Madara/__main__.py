@@ -85,7 +85,7 @@ PM_START_TEX = """
 """
 
 PM_START_TEXT = """
-**ɪ ᴀᴍ 𝙎𝙪𝙣𝙜 𝙅𝙞𝙣 𝙒𝙤𝙤**, 💀[ㅤ](https://telegra.ph/file/b3028bca7e9653509f1fd.jpg) 
+**ɪ ᴀᴍ Amelia**, 💀[ㅤ](https://telegra.ph/file/d05bf51c0ad82425c37bb.jpg) 
  
 ×⋆✦⋆──────────────⋆✦⋆×
 ×**ɪ ᴀᴍ ᴀ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ɢʀᴏᴜᴘ 
@@ -106,16 +106,16 @@ GROUP_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="👑 𝗢𝗪𝗡𝗘𝗥 👑", url=f"https://t.me/The_NanamiiKento"),
+        InlineKeyboardButton(text="👑 𝗢𝗪𝗡𝗘𝗥 👑", url=f"https://t.me/AbhishekSingh"),
     ],
     [
         InlineKeyboardButton(text="📕 𝘾𝙊𝙈𝙈𝘼𝙉𝘿𝙎", callback_data="help_back"),
         InlineKeyboardButton(
-            text="🚑 𝙎𝙐𝙋𝙋𝙊𝙍𝙏", url=f"https://t.me/Anime_Krew"
+            text="🚑 𝙎𝙐𝙋𝙋𝙊𝙍𝙏", url=f"https://t.me/WarBotzSupport"
         ),
     ],
     [
-        InlineKeyboardButton(text="🎵 𝙈𝙐𝙎𝙄𝘾", url=f"https://t.me/Nobara_Music_Bot?start=new"),
+        InlineKeyboardButton(text="🎵 𝙎𝙏𝙄𝘾𝙆𝙀𝙍𝙎", url=f"https://t.me/Stickersbag"),
         InlineKeyboardButton(text="✍️ 𝘼𝘽𝙊𝙐𝙏", callback_data="about_"),
     ],
     [
@@ -128,7 +128,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-✨𝙎𝙪𝙣𝙜 𝙅𝙞𝙣 𝙒𝙤𝙤✨[ㅤ](https://telegra.ph/file/b3028bca7e9653509f1fd.jpg)
+✨Amelia✨[ㅤ](https://telegra.ph/file/d05bf51c0ad82425c37bb.jpg)
 ━━━━━━━━━━━━━━━━━      
 ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ
 ɢᴇᴛ ᴜꜱᴀɢᴇ ᴏꜰ ꜱᴘᴇᴄɪꜰɪᴄꜱ ᴄᴏᴍᴍᴀɴᴅ
@@ -268,11 +268,11 @@ def start(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="🚑 𝙎𝙐𝙋𝙋𝙊𝙍𝙏",
-                            url=f"https://t.me/Anime_Krew",
+                            url=f"https://t.me/WarBotzSupport",
                         ),
                         InlineKeyboardButton(
                             text="📗 𝙐𝙋𝘿𝘼𝙏𝙀𝙎",
-                            url=f"https://t.me/JujutsuHighNetwork",
+                            url=f"https://t.me/Thewarbotz",
                         ),
                     ],
                     [
@@ -715,12 +715,12 @@ def main():
         try:
             dispatcher.bot.sendAnimation(
                 f"@{SUPPORT_CHAT}",
-                animation="https://telegra.ph/file/b3028bca7e9653509f1fd.jpg",
+                animation="https://te.legra.ph/file/9304d5138fb65e9fc39b6.jpg",
                 caption=f"""
 ✨ {dispatcher.bot.first_name} ɪs ᴀʟɪᴠᴇ .....
     ➖➖➖➖➖➖➖➖➖➖➖➖
           ➖➖➖➖➖➖➖
-👑 **𝐌𝐘 𝐎𝐖𝐍𝐄𝐑 :** [𝙽 𝙰 𝙽 𝙰 𝙼 𝙸](https://t.me/The_NanamiiKento)
+👑 **𝐌𝐘 𝐎𝐖𝐍𝐄𝐑 :** [Abhishek Singh](https://t.me/AbhishekSingh)
 🧑‍💻 **𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑 :** [Ɲᴀɴᴏ | ❄](https://t.me/SexyNano)
 ⍟ **𝐋𝐈𝐁𝐑𝐀𝐑𝐘 𝐕𝐄𝐑𝐒𝐈𝐎𝐍 :** `{lver}`
 ⍟ **𝐓𝐄𝐋𝐄𝐓𝐇𝐎𝐍 𝐕𝐄𝐑𝐒𝐈𝐎𝐍 :** `{tver}`
